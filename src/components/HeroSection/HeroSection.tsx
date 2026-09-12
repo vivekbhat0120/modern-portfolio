@@ -51,14 +51,14 @@ export const HeroSection = () => {
             {/* Light Theme: Clean Vibrant Gradient Text */}
             <div className="block dark:hidden">
               <span className="bg-gradient-to-r from-violet-600 via-sky-500 via-purple-600 to-indigo-600 bg-clip-text text-transparent font-extrabold text-[clamp(3rem,6.5vw,5.5rem)] leading-none tracking-tight block pb-2 select-none">
-                Scarlett Rose
+                Vivek Bhat
               </span>
             </div>
 
             {/* Dark Theme: Rich Lightswind Aurora Text Effect */}
             <div className="hidden dark:block">
               <AuroraTextEffect
-                text="Scarlett Rose"
+                text="Vivek Bhat"
                 fontSize="clamp(3rem, 6.5vw, 5.5rem)"
                 className="bg-transparent overflow-visible p-0 justify-start"
                 textClassName="bg-gradient-to-r from-cyan-400 via-purple-400 to-sky-300 bg-clip-text text-transparent pb-2 font-extrabold"
@@ -112,9 +112,9 @@ export const HeroSection = () => {
           transition={{ delay: 0.4, duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
           <HangingIdCard
-            name="Scarlett Rose"
-            role="Director of Engineering"
-            badgeId="SR-89240-PRO"
+            name="Vivek Bhat"
+            role="Frontend/Web Developer"
+            badgeId="VB-89240-PRO"
             accentColor="#8b5cf6"
             ropeLength={75}
             ropeColor="#27272a"
@@ -130,7 +130,7 @@ export const HeroSection = () => {
                 <div className="mt-1 relative w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-cyan-400 via-primary to-purple-400 backdrop-blur-md shadow-2xl border border-white/50 overflow-hidden group">
                   <img 
                     src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
-                    alt="Scarlett Rose" 
+                    alt="Vivek Bhat" 
                     className="w-full h-full object-cover rounded-full filter contrast-105"
                     loading="eager"
                   />
@@ -141,9 +141,9 @@ export const HeroSection = () => {
               {/* Card Body */}
               <div className="p-5 flex flex-col items-center text-center bg-card text-card-foreground flex-1 gap-3">
                 <div>
-                  <h3 className="text-xl font-extrabold tracking-tight text-foreground">Scarlett Rose</h3>
+                  <h3 className="text-xl font-extrabold tracking-tight text-foreground">Vivek Bhat</h3>
                   <div className="inline-flex items-center gap-1.5 mt-1 px-3 py-0.5 rounded-full bg-primary/10 border border-primary/30 text-primary text-xs font-semibold">
-                    <span>Director of Product Engineering</span>
+                    <span>Frontend/Web Developer</span>
                   </div>
                 </div>
 
@@ -187,7 +187,7 @@ export const HeroSection = () => {
                   </div>
                   <div className="flex items-center justify-between w-full px-1 text-[10px]">
                     <span className="font-mono font-bold tracking-widest text-primary">
-                      SR-89240-PRO
+                      VB-89240-PRO
                     </span>
                     <span className="text-muted-foreground font-semibold text-[9px] uppercase tracking-wider">
                       LIGHTSWIND UI

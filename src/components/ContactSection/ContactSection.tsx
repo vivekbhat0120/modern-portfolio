@@ -37,7 +37,7 @@ export const ContactSection = () => {
                 <div className="w-12 h-12 rounded-full glass-panel flex items-center justify-center group-hover:scale-110 transition-transform">
                   <Mail className="w-5 h-5" />
                 </div>
-                <span className="font-medium">hello@scarlettrose.dev</span>
+                <span className="font-medium">vivekbhat0120@gmail.com</span>
               </div>
               <div className="flex items-center gap-4 text-muted-foreground hover:text-primary transition-colors cursor-pointer group">
                 <div className="w-12 h-12 rounded-full glass-panel flex items-center justify-center group-hover:scale-110 transition-transform">
