@@ -12,7 +12,7 @@ import { Calendar } from "lucide-react";
 
 export interface TimelineEvent {
   id?: string;
-  year: string;
+  year?: string;
   title: string;
   subtitle?: string;
   description: string;
@@ -76,7 +76,6 @@ export const ScrollTimeline = ({
   parallaxIntensity = 0.2,
   progressLineWidth = 2,
   progressLineCap = "round",
-  dateFormat = "badge",
   revealAnimation = "fade",
   className = "",
   connectorStyle = "line",
@@ -337,30 +336,12 @@ export const ScrollTimeline = ({
                   >
                     <Card className="bg-background border">
                       <CardContent className="p-6">
-                        {dateFormat === "badge" ? (
-                          <div className="flex items-center mb-2">
-                            {event.icon || (
-                              <Calendar className="h-4 w-4 mr-2 text-primary" />
-                            )}
-                            <span
-                              className={cn(
-                                "text-sm font-bold",
-                                event.color
-                                  ? `text-${event.color}`
-                                  : "text-primary"
-                              )}
-                            >
-                              {event.year}
-                            </span>
-                          </div>
-                        ) : (
-                          <p className="text-lg font-bold text-primary mb-2">
-                            {event.year}
-                          </p>
-                        )}
-                        <h3 className="text-xl font-bold mb-1">
-                          {event.title}
-                        </h3>
+                        <div className="flex items-center gap-2 mb-2">
+                          {event.icon || (
+                            <Calendar className="h-5 w-5 shrink-0 text-primary" />
+                          )}
+                          <h3 className="text-xl font-bold">{event.title}</h3>
+                        </div>
                         {event.subtitle && (
                           <p className="text-muted-foreground font-medium mb-2">
                             {event.subtitle}

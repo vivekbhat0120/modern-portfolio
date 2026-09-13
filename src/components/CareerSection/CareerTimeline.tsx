@@ -1,47 +1,44 @@
 import { ScrollTimeline } from "../lightswind/scroll-timeline";
-import { Briefcase, Award, Layers, Users, Globe } from "lucide-react";
+import {
+  Globe,
+  Layout,
+  Shield,
+  Plug,
+  Cloud,
+} from "lucide-react";
 
 export const CareerTimeline = () => {
   const careerEvents = [
     {
-      year: "2024 – Present",
-      title: "Director of Product Engineering",
-      subtitle: "TechNova Global Solutions",
+      title: "Custom Web Applications",
       description:
-        "Leading a 200+ engineering team across 5 continents, overseeing full product lifecycle from ideation to global deployment. Introduced AI-driven development pipelines, reducing time-to-market by 38%. Established enterprise-wide accessibility and sustainability design standards.",
+        "Developing tailored web applications to meet unique business needs. From concept to deployment, I create robust and scalable web solutions that streamline operations.",
       icon: <Globe className="h-4 w-4 mr-2 text-primary" />,
     },
     {
-      year: "2020 – 2024",
-      title: "Senior Principal Engineer & Design Strategist",
-      subtitle: "Innova Digital Labs",
+      title: "Interactive UI Development",
       description:
-        "Architected scalable microservices for financial and healthcare industries, serving 20M+ active users. Directed the adoption of a unified design system across 12 product lines, increasing brand consistency and dev speed by 50%. Mentored 40+ senior engineers into leadership positions.",
-      icon: <Layers className="h-4 w-4 mr-2 text-primary" />,
+        "Building dynamic and engaging user interfaces with modern JavaScript frameworks like React and Vue. Enhance user interaction with smooth animations and intuitive navigation.",
+      icon: <Layout className="h-4 w-4 mr-2 text-primary" />,
     },
     {
-      year: "2016 – 2020",
-      title: "Lead Full-Stack Developer",
-      subtitle: "Skyline Interactive",
+      title: "Security & Maintenance",
       description:
-        "Spearheaded the creation of immersive web applications using React, GraphQL, and Node.js for high-profile clients. Reduced application load times by 70% through advanced performance optimization. Introduced component-driven workflows that became the company's standard practice.",
-      icon: <Briefcase className="h-4 w-4 mr-2 text-primary" />,
+        "Providing ongoing website maintenance and security updates. I monitor for vulnerabilities, apply patches, and ensure your web applications remain secure and up-to-date.",
+      icon: <Shield className="h-4 w-4 mr-2 text-primary" />,
     },
     {
-      year: "2012 – 2016",
-      title: "Senior UI/UX Designer",
-      subtitle: "PixelForge Studios",
+      title: "API Integration",
       description:
-        "Designed award-winning digital experiences for global brands, winning multiple Awwwards and Webby Awards. Championed user-centered design by integrating continuous feedback loops into every sprint. Collaborated with cross-functional teams to unify visual and interaction design.",
-      icon: <Award className="h-4 w-4 mr-2 text-primary" />,
+        "Integrating third-party APIs to enhance functionality and streamline workflows. I connect your applications with external services for payment processing, data retrieval, and more.",
+      icon: <Plug className="h-4 w-4 mr-2 text-primary" />,
     },
     {
-      year: "2008 – 2012",
-      title: "Frontend Developer & Interaction Designer",
+      title: "Cloud Deployment",
       subtitle: "CreativeSpark Agency",
       description:
-        "Built responsive and interactive marketing websites during the rise of mobile-first design. Created high-conversion landing pages for major e-commerce campaigns. Developed custom animations that improved user engagement metrics by over 45%.",
-      icon: <Users className="h-4 w-4 mr-2 text-primary" />,
+        "Deploying web applications to cloud platforms like AWS, Azure, and Render. I ensure scalable and reliable hosting solutions for your web projects.",
+      icon: <Cloud className="h-4 w-4 mr-2 text-primary" />,
     },
   ];
 
@@ -49,8 +46,8 @@ export const CareerTimeline = () => {
     <div id="career">
       <ScrollTimeline
         events={careerEvents}
-        title="Career Journey"
-        subtitle="An evolving path of leadership, innovation, and impact"
+        title="What I Do"
+        subtitle="Delivering comprehensive digital solutions that cover the entire lifecycle of professional product engineering."
         animationOrder="staggered"
         cardAlignment="alternating"
         cardVariant="elevated"

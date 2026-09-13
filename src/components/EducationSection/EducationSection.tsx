@@ -1,44 +1,34 @@
-import SkillCategory from "./SkillCategory";
 import { motion } from "framer-motion";
-import { GraduationCap, BookOpen, Award, CheckCircle2, Calendar, Building2, Sparkles } from "lucide-react";
+import { GraduationCap, BookOpen, Award, CheckCircle2, Calendar, Building2 } from "lucide-react";
 import { MagicCard } from "../lightswind/magic-card";
 
 export const EducationSection = () => {
   const education = [
     {
-      degree: "M.Sc. in Computer Science",
-      school: "University of Chennai",
-      year: "2016 – 2018",
+      degree: "B.E in Electronics & Telecommunication",
+      school: "MSRIT Bangalore",
+      year: "2020 – 2023",
       badge: "IEEE Published Author",
       badgeIcon: Award,
       badgeColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/30",
       icon: GraduationCap,
       details: [
-        "Specialized in Software Architecture, Distributed Systems, and AI Applications",
-        "Thesis on Machine Learning for Predictive Analytics & Neural Optimization",
-        "Led enterprise research project on Cloud-Based ERP microservices",
-        "Published 2 peer-reviewed research papers in IEEE international conferences"
+        
       ]
     },
     {
-      degree: "B.Sc. in Information Technology",
-      school: "Anna University",
-      year: "2013 – 2016",
-      badge: "Top 5% Honors",
-      badgeIcon: Sparkles,
-      badgeColor: "text-primary bg-primary/10 border-primary/30",
+      degree: "Diploma in Electronics & Communication",
+      school: "RNS Polytechnic",
+      year: "2017 – 2020",
       icon: BookOpen,
       details: [
-        "Gained rigorous foundation in Systems Programming, Networking & DB Management",
-        "Ranked in top 5% across Software Engineering & Algorithms coursework",
-        "Architected campus-wide digital library management system",
-        "Organized and chaired annual technical symposium for 3 consecutive years"
+        
       ]
     }
   ];
 
   return (
-    <section id="education" className="max-w-7xl mx-auto px-6 py-24 space-y-20">
+    <section id="education" className="max-w-7xl mx-auto px-6 py-24">
       
       {/* Education Header & Cards */}
       <div>
@@ -58,14 +48,13 @@ export const EducationSection = () => {
             </h2>
           </div>
           <p className="text-muted-foreground text-lg max-w-2xl">
-            Building the theoretical foundation and research methodologies that empower high-performance practical engineering.
+            A journey of continuous learning and skill development. From foundational studies to advanced research, my academic path has equipped me with the knowledge and expertise to excel in the ever-evolving tech landscape.
           </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {education.map((edu, i) => {
             const DegreeIcon = edu.icon;
-            const BadgeIcon = edu.badgeIcon;
             return (
               <motion.div
                 key={i}
@@ -88,10 +77,6 @@ export const EducationSection = () => {
                         <div className="w-14 h-14 rounded-2xl bg-primary/10 border border-primary/25 text-primary flex items-center justify-center shadow-sm">
                           <DegreeIcon className="w-7 h-7 text-primary" />
                         </div>
-                        <span className={`px-3.5 py-1.5 rounded-full border text-xs font-extrabold flex items-center gap-1.5 shadow-sm ${edu.badgeColor}`}>
-                          <BadgeIcon className="w-3.5 h-3.5" />
-                          {edu.badge}
-                        </span>
                       </div>
 
                       {/* Degree Title & Institution Meta */}
@@ -99,11 +84,10 @@ export const EducationSection = () => {
                         {edu.degree}
                       </h3>
                       
-                      <div className="flex flex-wrap items-center gap-4 text-xs font-semibold text-muted-foreground mb-6 pb-4 border-b border-border/60">
+                      <div className="flex flex-wrap items-center justify-between gap-4 text-xs font-semibold text-muted-foreground mb-6 pb-4 border-b border-border/60">
                         <span className="flex items-center gap-1.5 text-foreground font-bold">
                           <Building2 className="w-3.5 h-3.5 text-primary" /> {edu.school}
                         </span>
-                        <span>•</span>
                         <span className="flex items-center gap-1.5 font-mono text-primary font-bold">
                           <Calendar className="w-3.5 h-3.5" /> {edu.year}
                         </span>
@@ -125,11 +109,6 @@ export const EducationSection = () => {
             );
           })}
         </div>
-      </div>
-
-      {/* Expertise & Skills Component */}
-      <div>
-        <SkillCategory />
       </div>
 
     </section>

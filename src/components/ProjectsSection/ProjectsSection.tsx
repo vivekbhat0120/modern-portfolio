@@ -1,38 +1,42 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
+import agraz from "../../assets/agraz.png";
+import bakula from "../../assets/bakula.png";
+import mivent from "../../assets/mivent.png";
+import phc from "../../assets/ph.png";
 
 export const ProjectsSection = () => {
   const projects = [
     {
       id: 1,
-      title: "AI-Powered Design Platform",
-      subtitle: "Generative assets and automated scaling for e-commerce platforms",
-      link: "#",
-      image: "https://images.pexels.com/photos/8294591/pexels-photo-8294591.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      title: "Mivent - Event Management Platform",
+      subtitle: "An event management platform to manage events, team members, services, quotations, and billing.",
+      link: "https://miventsite.com/support",
+      image: mivent,
       gridClass: "md:col-span-7 h-[420px]",
     },
     {
       id: 2,
-      title: "Global E-Learning",
-      subtitle: "Serving 1.2M+ active students worldwide",
-      link: "#",
-      image: "https://images.pexels.com/photos/15595050/pexels-photo-15595050.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      title: "PH Clicks Portfolio",
+      subtitle: "A sleek and responsive portfolio website showcasing PH Clicks’ photography and creative work.",
+      link: "https://phclicks.netlify.app/",
+      image: phc,
       gridClass: "md:col-span-5 h-[420px]",
     },
     {
       id: 3,
-      title: "Modular ERP System",
-      subtitle: "Enterprise logistics & supply chain manufacturing engine",
-      link: "#",
-      image: "https://images.pexels.com/photos/1148820/pexels-photo-1148820.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      title: "AgRaz - Smart Agriculture ERP",
+      subtitle: "A smart Agriculture ERP built for modern farmers and agribusinesses to digitize their agricultural journey.",
+      link: "https://agrazllp.com/",
+      image: agraz,
       gridClass: "md:col-span-5 h-[360px]",
     },
     {
       id: 4,
-      title: "Fintech Predictive Dashboard",
-      subtitle: "Real-time analytics, algorithmic trading & risk modeling",
-      link: "#",
-      image: "https://images.pexels.com/photos/6169673/pexels-photo-6169673.jpeg?auto=compress&cs=tinysrgb&w=1200",
+      title: "Bakula - E-commerce Platform",
+      subtitle: "An e-commerce platform for discover & purchase authentic homemade products from local creators.",
+      link: "https://www.bakulahome.in/",
+      image: bakula,
       gridClass: "md:col-span-7 h-[360px]",
     },
   ];

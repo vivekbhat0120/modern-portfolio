@@ -3,15 +3,13 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import { HeroSection } from "./components/HeroSection/HeroSection";
 import { AboutSection } from "./components/AboutSection/AboutSection";
-import { ServicesSection } from "./components/ServicesSection/ServicesSection";
 import { ProjectsSection } from "./components/ProjectsSection/ProjectsSection";
 import { EducationSection } from "./components/EducationSection/EducationSection";
 import { CareerTimeline } from "./components/CareerSection/CareerTimeline";
-import TestimonialsSection from "./components/TestimonialsSection/TestimonialsSection";
 import { ContactSection } from "./components/ContactSection/ContactSection";
 import { Footer } from "./components/Footer/Footer";
 import ReactLenis from "lenis/react";
-import { Home, User, GraduationCap, Briefcase, FolderKanban, Send, MessageSquare } from "lucide-react";
+import { Home, User, GraduationCap, Briefcase, FolderKanban, Send } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 import Dock from "./components/lightswind/dock";
@@ -50,10 +48,9 @@ function App() {
   const dockItems = [
     { icon: <Home size={20} />, label: "Home", onClick: () => scrollToSection("hero") },
     { icon: <User size={20} />, label: "About", onClick: () => scrollToSection("about") },
-    { icon: <Briefcase size={20} />, label: "Career", onClick: () => scrollToSection("career") },
+    { icon: <Briefcase size={20} />, label: "Services", onClick: () => scrollToSection("career") },
     { icon: <FolderKanban size={20} />, label: "Projects", onClick: () => scrollToSection("projects") },
     { icon: <GraduationCap size={20} />, label: "Education", onClick: () => scrollToSection("education") },
-    { icon: <MessageSquare size={20} />, label: "Testimonials", onClick: () => scrollToSection("testimonials") },
     { icon: <Send size={20} />, label: "Contact", onClick: () => scrollToSection("contact") },
   ];
 
@@ -66,11 +63,9 @@ function App() {
         <main className="w-full flex flex-col pt-10 border-none">
           <HeroSection />
           <AboutSection />
-          <ServicesSection />
           <ProjectsSection />
           <CareerTimeline />
           <EducationSection />
-          <TestimonialsSection />
           <ContactSection />
         </main>
 

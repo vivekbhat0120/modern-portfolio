@@ -1,13 +1,12 @@
 import { motion } from "framer-motion";
-import { Github, Linkedin, Twitter, Mail, ArrowUp, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, MessageCircle, ArrowUp, Heart } from "lucide-react";
 import { MorphingText } from "../lightswind/morphing-text";
 
 export const Footer = () => {
   const morphingTexts = [
-    "Full-Stack Developer",
-    "UI/UX Architect",
-    "AI Systems Engineer",
-    "Product Builder",
+    "Frontend Developer",
+    "Web developer",
+    "Full Stack Developer",
     "Vivek Bhat",
   ];
 
@@ -18,17 +17,17 @@ export const Footer = () => {
   const navLinks = [
     { name: "Home", href: "#hero" },
     { name: "About", href: "#about" },
-    { name: "Career", href: "#career" },
+    { name: "Services", href: "#career" },
     { name: "Projects", href: "#projects" },
     { name: "Education", href: "#education" },
     { name: "Contact", href: "#contact" },
   ];
 
   const socialLinks = [
-    { icon: Twitter, href: "#", label: "Twitter" },
-    { icon: Github, href: "#", label: "GitHub" },
-    { icon: Linkedin, href: "#", label: "LinkedIn" },
+    { icon: Github, href: "https://github.com/vivekbhat0120", label: "GitHub" },
+    { icon: Linkedin, href: "https://www.linkedin.com/in/vivekbhat01/", label: "LinkedIn" },
     { icon: Mail, href: "mailto:vivekbhat0120@gmail.com", label: "Email" },
+    { icon: MessageCircle, href: "https://wa.me/919449401478", label: "WhatsApp" },
   ];
 
   return (
@@ -44,7 +43,7 @@ export const Footer = () => {
             <div className="relative w-10 h-10 rounded-xl bg-gradient-to-tr from-purple-600 via-primary to-sky-400 p-[1px] shadow-lg">
               <div className="w-full h-full bg-background rounded-[11px] flex items-center justify-center">
                 <span className="font-extrabold text-xs tracking-tighter bg-gradient-to-r from-purple-500 to-sky-400 bg-clip-text text-transparent">
-                  SR
+                  VB
                 </span>
               </div>
             </div>
@@ -77,8 +76,8 @@ export const Footer = () => {
 
           <MorphingText
             texts={morphingTexts}
-            morphTime={1.6}
-            cooldownTime={0.8}
+            morphTime={1.5}
+            cooldownTime={1.5}
             className="text-3xl md:text-5xl lg:text-6xl text-foreground font-extrabold min-h-[70px] text-center"
           />
         </div>
@@ -102,11 +101,13 @@ export const Footer = () => {
           <div className="flex items-center gap-3">
             {socialLinks.map((social, i) => {
               const Icon = social.icon;
+              const isExternal = social.href.startsWith("http");
               return (
                 <a
                   key={i}
                   href={social.href}
                   aria-label={social.label}
+                  {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                   className="w-10 h-10 rounded-full glass-panel border border-black/5 dark:border-white/10 flex items-center justify-center text-muted-foreground hover:text-foreground hover:border-primary/40 hover:scale-110 transition-all shadow-sm"
                 >
                   <Icon className="w-4 h-4" />
@@ -119,7 +120,6 @@ export const Footer = () => {
           <div className="flex items-center gap-1.5 font-medium text-center md:text-right">
             <span>© {new Date().getFullYear()} Vivek Bhat. Crafted with</span>
             <Heart className="w-3.5 h-3.5 text-rose-500 fill-rose-500 inline-block" />
-            <span>& Lightswind UI</span>
           </div>
         </div>
 

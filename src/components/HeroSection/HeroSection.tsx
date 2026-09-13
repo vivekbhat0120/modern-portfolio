@@ -1,13 +1,26 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Download, Github, Linkedin, Mail, Twitter } from "lucide-react";
+import { ArrowRight, Download, Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 import TechStackSection from "../TechStackSection/TechStackSection";
 import { Button } from "../lightswind/button";
 import { Badge } from "../lightswind/badge";
 import { HangingIdCard } from "../lightswind/HangingIdCard";
 import { AuroraTextEffect } from "../lightswind/aurora-text-effect";
 import { DotPattern } from "../lightswind/dot-pattern";
+import meImg from "../../assets/me.webp";
+import resumePdf from "../../assets/Vivek_Bhat_Dev.pdf";
 
 export const HeroSection = () => {
+  const scrollToProjects = () => {
+    document.getElementById("projects")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+  const downloadResume = () => {
+    const link = document.createElement("a");
+    link.href = resumePdf;
+    link.download = "Vivek_Bhat_Dev.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
   return (
     <section id="hero" className="relative min-h-[100vh] flex flex-col pt-12 md:pt-16 overflow-hidden bg-background">
       {/* Background Dot Pattern with Radial Vignette Shade */}
@@ -72,7 +85,7 @@ export const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 0.8 }}
           >
-            I build exceptional and accessible digital experiences. Specialized in crafting premium web applications with elegant design systems.
+            I am a passionate Frontend/Web Developer with over 2 years of experience in crafting responsive and user-friendly web applications. I specialize in React, TypeScript, and modern web technologies, delivering high-quality solutions that enhance user experiences and drive business success.
           </motion.p>
 
           <motion.div 
@@ -81,10 +94,10 @@ export const HeroSection = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8 }}
           >
-            <Button size="lg" className="rounded-full px-7 h-12 bg-primary text-primary-foreground font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:-translate-y-1">
+            <Button size="lg" onClick={scrollToProjects} className="rounded-full px-7 h-12 bg-primary text-primary-foreground font-semibold flex items-center gap-2 hover:bg-primary/90 transition-all shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)] hover:-translate-y-1">
               View Work <ArrowRight className="w-4 h-4" />
             </Button>
-            <Button size="lg" variant="outline" className="rounded-full px-7 h-12 glass-panel text-foreground font-semibold flex items-center gap-2 hover:bg-foreground/10 transition-all hover:-translate-y-1 border-foreground/10">
+            <Button size="lg" variant="outline" onClick={downloadResume} className="rounded-full px-7 h-12 glass-panel text-foreground font-semibold flex items-center gap-2 hover:bg-foreground/10 transition-all hover:-translate-y-1 border-foreground/10">
               Resume <Download className="w-4 h-4" />
             </Button>
           </motion.div>
@@ -96,8 +109,19 @@ export const HeroSection = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8, duration: 0.8 }}
           >
-            {[Twitter, Github, Linkedin, Mail].map((Icon, i) => (
-              <a key={i} href="#" className="text-muted-foreground hover:text-foreground transition-colors hover:-translate-y-1 transform duration-200">
+            {[
+              { Icon: Github, href: "https://github.com/vivekbhat0120", label: "GitHub" },
+              { Icon: Linkedin, href: "https://www.linkedin.com/in/vivekbhat01/", label: "LinkedIn" },
+              { Icon: Mail, href: "mailto:vivekbhat0120@gmail.com", label: "Email" },
+              { Icon: MessageCircle, href: "https://wa.me/919449401478", label: "WhatsApp" },
+            ].map(({ Icon, href, label }, i) => (
+              <a
+                key={i}
+                href={href}
+                aria-label={label}
+                {...(href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="text-muted-foreground hover:text-foreground transition-colors hover:-translate-y-1 transform duration-200"
+              >
                 <Icon className="w-5 h-5" />
               </a>
             ))}
@@ -127,11 +151,11 @@ export const HeroSection = () => {
                 <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#fff_1px,transparent_1px)] [background-size:12px_12px] pointer-events-none" />
 
                 {/* Profile Photo with Dual Glowing Ring */}
-                <div className="mt-1 relative w-28 h-28 rounded-full p-1 bg-gradient-to-tr from-cyan-400 via-primary to-purple-400 backdrop-blur-md shadow-2xl border border-white/50 overflow-hidden group">
+                <div className="mt-1 relative w-32 h-32 rounded-full p-1 bg-white backdrop-blur-md shadow-2xl border border-white/50 overflow-hidden group">
                   <img 
-                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" 
+                    src={meImg} 
                     alt="Vivek Bhat" 
-                    className="w-full h-full object-cover rounded-full filter contrast-105"
+                    className="w-full h-full object-cover object-top rounded-full bg-white filter contrast-105 scale-110"
                     loading="eager"
                   />
                   <div className="absolute bottom-1 right-2 w-4 h-4 rounded-full bg-emerald-500 border-2 border-white shadow-md" />
@@ -153,15 +177,15 @@ export const HeroSection = () => {
                 <div className="grid grid-cols-2 gap-2.5 w-full text-left bg-muted/40 p-3 rounded-xl border border-border/50">
                   <div>
                     <span className="text-muted-foreground block text-[9px] uppercase tracking-widest font-bold">Specialty</span>
-                    <span className="font-bold text-foreground text-xs">Full-Stack AI & UX</span>
+                    <span className="font-bold text-foreground text-xs">Developer</span>
                   </div>
                   <div>
                     <span className="text-muted-foreground block text-[9px] uppercase tracking-widest font-bold">Location</span>
-                    <span className="font-bold text-foreground text-xs">San Francisco, CA</span>
+                    <span className="font-bold text-foreground text-xs">Karnataka</span>
                   </div>
                   <div>
                     <span className="text-muted-foreground block text-[9px] uppercase tracking-widest font-bold">Experience</span>
-                    <span className="font-bold text-foreground text-xs">10+ Years</span>
+                    <span className="font-bold text-foreground text-xs">2+ Years</span>
                   </div>
                   <div>
                     <span className="text-muted-foreground block text-[9px] uppercase tracking-widest font-bold">Status</span>
@@ -190,7 +214,7 @@ export const HeroSection = () => {
                       VB-89240-PRO
                     </span>
                     <span className="text-muted-foreground font-semibold text-[9px] uppercase tracking-wider">
-                      LIGHTSWIND UI
+                      MIVENT
                     </span>
                   </div>
                 </div>
